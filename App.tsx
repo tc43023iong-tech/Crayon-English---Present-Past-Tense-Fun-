@@ -20,11 +20,17 @@ const App: React.FC = () => {
   const renderSection = () => {
     switch (currentStep) {
       case LessonStep.INTRO:
-        return <IntroSection onNext={() => setCurrentStep(LessonStep.PRESENT_SIMPLE)} />;
+        return <IntroSection onNext={() => setCurrentStep(LessonStep.REVIEW_PATTERNS)} />;
+      case LessonStep.REVIEW_PATTERNS:
+        return <ReviewSection onNext={() => setCurrentStep(LessonStep.PRESENT_SIMPLE)} />;
       case LessonStep.PRESENT_SIMPLE:
         return <PresentSimpleSection onNext={() => setCurrentStep(LessonStep.PAST_SIMPLE_CONCEPT)} />;
       case LessonStep.PAST_SIMPLE_CONCEPT:
-        return <PastSimpleConceptSection onNext={() => setCurrentStep(LessonStep.PAST_SIMPLE_RULES)} />;
+        return <PastSimpleConceptSection onNext={() => setCurrentStep(LessonStep.PRACTICE_NEGATIVES)} />;
+      case LessonStep.PRACTICE_NEGATIVES:
+        return <NegativesSection onNext={() => setCurrentStep(LessonStep.PRACTICE_QA)} />;
+      case LessonStep.PRACTICE_QA:
+        return <QAPracticeSection onNext={() => setCurrentStep(LessonStep.PAST_SIMPLE_RULES)} />;
       case LessonStep.PAST_SIMPLE_RULES:
         return <PastSimpleRulesSection onNext={() => setCurrentStep(LessonStep.PRACTICE_VERBS)} />;
       case LessonStep.PRACTICE_VERBS:
@@ -32,23 +38,17 @@ const App: React.FC = () => {
       case LessonStep.PRACTICE_GIRLS_TALK:
         return <GirlsTalkSection onNext={() => setCurrentStep(LessonStep.PRACTICE_SO)} />;
       case LessonStep.PRACTICE_SO:
-        return <SoPracticeSection onNext={() => setCurrentStep(LessonStep.PRACTICE_NEGATIVES)} />;
-      case LessonStep.PRACTICE_NEGATIVES:
-        return <NegativesSection onNext={() => setCurrentStep(LessonStep.PRACTICE_QA)} />;
-      case LessonStep.PRACTICE_QA:
-        return <QAPracticeSection onNext={() => setCurrentStep(LessonStep.REVIEW_PATTERNS)} />;
-      case LessonStep.REVIEW_PATTERNS:
-        return <ReviewSection onNext={() => setCurrentStep(LessonStep.SUMMARY)} />;
+        return <SoPracticeSection onNext={() => setCurrentStep(LessonStep.SUMMARY)} />;
       case LessonStep.SUMMARY:
         return <SummarySection onRestart={() => setCurrentStep(LessonStep.INTRO)} />;
       default:
-        return <IntroSection onNext={() => setCurrentStep(LessonStep.PRESENT_SIMPLE)} />;
+        return <IntroSection onNext={() => setCurrentStep(LessonStep.REVIEW_PATTERNS)} />;
     }
   };
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row overflow-hidden relative bg-[#fffdf5]">
-      {/* Character Background Decor - Using stable Icons8 assets */}
+      {/* Character Background Decor */}
       <div className="fixed top-0 left-0 w-full h-full pointer-events-none opacity-[0.05] select-none z-0">
         <img src="https://img.icons8.com/color/512/panda.png" className="absolute top-10 left-10 w-48 rotate-12" alt="" />
         <img src="https://img.icons8.com/color/512/dog.png" className="absolute top-1/4 right-10 w-40 -rotate-12" alt="" />
@@ -63,9 +63,7 @@ const App: React.FC = () => {
       
       <main className="flex-1 overflow-y-auto p-4 md:p-10 relative z-10">
         <div className="max-w-6xl mx-auto bg-white/80 backdrop-blur-sm rounded-[3rem] p-6 md:p-10 shadow-2xl border-8 border-dashed border-sky-100 relative">
-          {/* Bottom Right Decoration - Keeping the working pencil icon */}
           <img src="https://img.icons8.com/color/96/pencil.png" className="absolute -bottom-6 -right-6 w-16 z-20 drop-shadow-md" alt="pencil" />
-          
           {renderSection()}
         </div>
       </main>

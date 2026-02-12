@@ -46,8 +46,8 @@ const IntroSection: React.FC<IntroSectionProps> = ({ onNext }) => {
         onClick={onNext}
         className="group relative px-14 py-6 bg-sky-500 hover:bg-sky-600 text-white text-3xl font-black rounded-full shadow-[0_8px_0_0_#0369a1] active:shadow-none active:translate-y-2 transition-all flex items-center justify-center gap-4 mx-auto"
       >
-        <span>跟著夥伴出發！</span>
-        <img src="https://img.icons8.com/color/96/rocket.png" className="w-10 h-10 group-hover:animate-pulse" alt="rocket" />
+        <span>先看必考重點句型！</span>
+        <img src="https://img.icons8.com/color/96/books.png" className="w-10 h-10 group-hover:animate-pulse" alt="books" />
       </button>
       
       <div className="flex justify-center gap-8 opacity-60">

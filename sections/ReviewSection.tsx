@@ -6,7 +6,14 @@ const ReviewSection: React.FC<{ onNext: () => void }> = ({ onNext }) => {
     <div className="space-y-8 animate-in slide-in-from-bottom duration-500">
       <div className="flex items-center gap-4 border-b-4 border-yellow-300 pb-4">
         <span className="text-5xl">💎</span>
-        <h2 className="text-4xl font-black text-yellow-600 italic">必考重點句型回顧</h2>
+        <h2 className="text-4xl font-black text-yellow-600 italic">Language focus 1 & 2</h2>
+      </div>
+
+      <div className="flex items-center gap-4 bg-yellow-50 p-6 rounded-3xl border-2 border-yellow-100 shadow-inner">
+        <img src="https://img.icons8.com/color/96/panda.png" className="w-16 h-16" alt="panda" />
+        <p className="text-xl text-slate-700 font-bold">
+          熊貓老師：「在冒險開始前，我們先來看看我們會學到哪些厲害的句子吧！✨」
+        </p>
       </div>
 
       <div className="space-y-6">
@@ -68,14 +75,14 @@ const ReviewSection: React.FC<{ onNext: () => void }> = ({ onNext }) => {
 
       <div className="bg-yellow-100 p-6 rounded-[2rem] border-2 border-dashed border-yellow-400 text-center animate-pulse">
         <p className="text-2xl font-black text-yellow-700 italic">
-          ✨ 小提示：只要記住這三個句型，你就是時態小霸王了！ ✨
+          ✨ 記住這些樣子，我們現在去學習它們的規律吧！ ✨
         </p>
       </div>
 
       <div className="flex justify-center pt-6">
-        <button onClick={onNext} className="px-16 py-7 bg-yellow-500 hover:bg-yellow-600 text-white text-3xl font-black rounded-full shadow-[0_8px_0_0_#a16207] active:shadow-none active:translate-y-2 transition-all flex items-center gap-6 group">
-          <img src="https://img.icons8.com/color/96/medal.png" className="w-12 h-12 group-hover:scale-125 transition-transform" alt="medal" />
-          <span>準備好領取獎牌了！</span>
+        <button onClick={onNext} className="px-16 py-7 bg-pink-500 hover:bg-pink-600 text-white text-3xl font-black rounded-full shadow-[0_8px_0_0_#9d174d] active:shadow-none active:translate-y-2 transition-all flex items-center gap-6 group">
+          <img src="https://img.icons8.com/color/96/time.png" className="w-12 h-12 group-hover:rotate-12 transition-transform" alt="time" />
+          <span>從「現在」開始冒險！</span>
         </button>
       </div>
     </div>

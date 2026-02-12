@@ -10,15 +10,15 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ currentStep, onNavigate }) => {
   const steps = [
     { id: LessonStep.INTRO, label: '🌟 你好!', icon: '👋' },
+    { id: LessonStep.REVIEW_PATTERNS, label: '📚 重點句型', icon: '💎' },
     { id: LessonStep.PRESENT_SIMPLE, label: '📅 現在式詳解', icon: '🕒' },
     { id: LessonStep.PAST_SIMPLE_CONCEPT, label: '🕰️ 過去式概念', icon: '🎩' },
+    { id: LessonStep.PRACTICE_NEGATIVES, label: '❌ 胖虎日記', icon: '🚫' },
+    { id: LessonStep.PRACTICE_QA, label: '❓ 問答高手', icon: '💡' },
     { id: LessonStep.PAST_SIMPLE_RULES, label: '📝 拼寫魔法', icon: '✍️' },
     { id: LessonStep.PRACTICE_VERBS, label: '✏️ 動詞填空', icon: '🖍️' },
     { id: LessonStep.PRACTICE_GIRLS_TALK, label: '🗣️ 女生悄悄話', icon: '👧' },
     { id: LessonStep.PRACTICE_SO, label: '🎯 所以呢?', icon: '🏹' },
-    { id: LessonStep.PRACTICE_NEGATIVES, label: '❌ 胖虎日記', icon: '🚫' },
-    { id: LessonStep.PRACTICE_QA, label: '❓ 問答高手', icon: '💡' },
-    { id: LessonStep.REVIEW_PATTERNS, label: '📚 重點句型', icon: '💎' },
     { id: LessonStep.SUMMARY, label: '🏆 畢業典禮', icon: '🏅' },
   ];
 

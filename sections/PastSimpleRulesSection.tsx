@@ -3,10 +3,34 @@ import React from 'react';
 
 const PastSimpleRulesSection: React.FC<{ onNext: () => void }> = ({ onNext }) => {
   const rules = [
-    { rule: '直接加 -ed', present: 'listen, paint, play', past: 'listened, painted, played', color: 'bg-blue-100', icon: '🎨' },
-    { rule: '短元音+雙寫尾字母+ed', present: 'chat, clap, skip', past: 'chatted, clapped, skipped', color: 'bg-yellow-100', icon: '👏' },
-    { rule: '輔音+y ➜ 變 i + ed', present: 'study, tidy', past: 'studied, tidied', color: 'bg-green-100', icon: '📚' },
-    { rule: '直接加 -d (e結尾)', present: 'smile, live, line', past: 'smiled, lived, lined', color: 'bg-pink-100', icon: '😊' },
+    { 
+      rule: '直接加 -ed', 
+      present: 'listen (聽), paint (畫), play (玩)', 
+      past: 'listened, painted, played', 
+      color: 'bg-blue-100', 
+      icon: '🎨' 
+    },
+    { 
+      rule: '短元音+雙寫尾字母+ed', 
+      present: 'chat (聊天), clap (拍手), skip (跳繩)', 
+      past: 'chatted, clapped, skipped', 
+      color: 'bg-yellow-100', 
+      icon: '👏' 
+    },
+    { 
+      rule: '輔音+y ➜ 變 i + ed', 
+      present: 'study (學習/溫習), tidy (整理)', 
+      past: 'studied, tidied', 
+      color: 'bg-green-100', 
+      icon: '📚' 
+    },
+    { 
+      rule: '直接加 -d (e結尾)', 
+      present: 'smile (微笑), live (居住), line (排隊)', 
+      past: 'smiled, lived, lined', 
+      color: 'bg-pink-100', 
+      icon: '😊' 
+    },
   ];
 
   return (
@@ -29,8 +53,8 @@ const PastSimpleRulesSection: React.FC<{ onNext: () => void }> = ({ onNext }) =>
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-orange-400 text-white text-2xl">
-                <th className="p-6">現在式</th>
-                <th className="p-6">過去式</th>
+                <th className="p-6">現在式 (Present)</th>
+                <th className="p-6">過去式 (Past)</th>
                 <th className="p-6">變化規則</th>
               </tr>
             </thead>
@@ -59,18 +83,18 @@ const PastSimpleRulesSection: React.FC<{ onNext: () => void }> = ({ onNext }) =>
         <div className="grid grid-cols-2 gap-8 text-center relative z-10">
           <div className="bg-white p-8 rounded-3xl border-4 border-red-100 shadow-lg group hover:scale-105 transition-transform">
             <p className="text-slate-400 text-sm mb-2 uppercase font-black tracking-widest">現在式 (Present)</p>
-            <p className="text-4xl font-black text-slate-700">am / is</p>
-            <div className="text-5xl my-4 text-red-400 flex justify-center">
-               <img src="https://img.icons8.com/color/96/down-arrow.png" className="w-12 h-12 animate-bounce" alt="down" />
+            <p className="text-4xl font-black text-slate-700">am / is (是)</p>
+            <div className="text-5xl my-4 flex justify-center animate-bounce">
+               ⬇️
             </div>
             <p className="text-slate-400 text-sm mb-2 uppercase font-black tracking-widest">過去式 (Past)</p>
             <p className="text-6xl font-black text-red-600 drop-shadow-md">was</p>
           </div>
           <div className="bg-white p-8 rounded-3xl border-4 border-red-100 shadow-lg group hover:scale-105 transition-transform">
             <p className="text-slate-400 text-sm mb-2 uppercase font-black tracking-widest">現在式 (Present)</p>
-            <p className="text-4xl font-black text-slate-700">are</p>
-            <div className="text-5xl my-4 text-red-400 flex justify-center">
-               <img src="https://img.icons8.com/color/96/down-arrow.png" className="w-12 h-12 animate-bounce" alt="down" />
+            <p className="text-4xl font-black text-slate-700">are (是)</p>
+            <div className="text-5xl my-4 flex justify-center animate-bounce">
+               ⬇️
             </div>
             <p className="text-slate-400 text-sm mb-2 uppercase font-black tracking-widest">過去式 (Past)</p>
             <p className="text-6xl font-black text-red-600 drop-shadow-md">were</p>

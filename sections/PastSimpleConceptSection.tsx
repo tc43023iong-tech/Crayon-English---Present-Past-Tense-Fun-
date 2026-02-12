@@ -40,44 +40,78 @@ const PastSimpleConceptSection: React.FC<{ onNext: () => void }> = ({ onNext }) 
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-8">
-        <div className="bg-indigo-50 p-8 rounded-[2.5rem] border-4 border-indigo-100 shadow-lg transform hover:-rotate-1 transition-transform relative">
-          <h4 className="text-3xl font-black text-indigo-700 mb-6 flex items-center gap-3">
-            ❓ 問句結構
+      <div className="grid md:grid-cols-3 gap-6">
+        {/* Affirmative Card */}
+        <div className="bg-yellow-50 p-6 rounded-[2.5rem] border-4 border-yellow-100 shadow-lg transform hover:-rotate-1 transition-transform relative flex flex-col">
+          <h4 className="text-2xl font-black text-yellow-700 mb-6 flex items-center gap-2">
+            ✅ 肯定結構
           </h4>
-          <div className="bg-white p-6 rounded-2xl text-xl space-y-4 font-mono shadow-inner border-2 border-indigo-100">
-            <p className="font-black text-center border-b-2 border-indigo-50 pb-3 text-indigo-500 text-2xl">Did + 主詞 + <span className="text-purple-600">原形動詞</span>?</p>
-            <p className="text-green-600 flex items-center gap-3 font-bold">
-              <span className="text-2xl">✅</span> Did you <span className="underline decoration-4 decoration-green-300 font-black italic">enjoy</span> your weekend?
-            </p>
-            <p className="text-red-400 line-through text-sm italic flex items-center gap-2">
-              <span className="text-lg">❌</span> Did you enjoyed...?
-            </p>
+          <div className="bg-white p-5 rounded-2xl text-lg space-y-4 font-mono shadow-inner border-2 border-yellow-100 flex-1">
+            <p className="font-black text-center border-b-2 border-yellow-50 pb-3 text-yellow-500 text-xl">主詞 + <span className="text-orange-500">過去式動詞</span></p>
+            <div className="space-y-3">
+              <div className="bg-blue-50 p-2 rounded-xl border border-blue-100 text-center">
+                <p className="text-xs font-black text-blue-700">💡 提示：動詞要變身喔！</p>
+              </div>
+              <p className="text-green-600 flex items-center gap-2 font-bold">
+                <span className="text-xl">✅</span> I <span className="underline decoration-4 decoration-green-300 font-black italic">played</span> games.
+              </p>
+              <p className="text-slate-400 italic text-xs pl-8">I played online games.</p>
+            </div>
           </div>
-          <img src="https://img.icons8.com/color/96/question-mark.png" className="absolute -top-4 -right-4 w-12" alt="question" />
+          <img src="https://img.icons8.com/color/96/ok.png" className="absolute -top-3 -right-3 w-10" alt="affirmative" />
         </div>
 
-        <div className="bg-green-50 p-8 rounded-[2.5rem] border-4 border-green-100 shadow-lg transform hover:rotate-1 transition-transform relative">
-          <h4 className="text-3xl font-black text-green-700 mb-6 flex items-center gap-3">
+        {/* Negative Card */}
+        <div className="bg-green-50 p-6 rounded-[2.5rem] border-4 border-green-100 shadow-lg transform hover:rotate-1 transition-transform relative flex flex-col">
+          <h4 className="text-2xl font-black text-green-700 mb-6 flex items-center gap-2">
             🚫 否定結構
           </h4>
-          <div className="bg-white p-6 rounded-2xl text-xl space-y-4 font-mono shadow-inner border-2 border-green-100">
-            <p className="font-black text-center border-b-2 border-green-50 pb-3 text-green-500 text-2xl italic">主詞 + <span className="text-red-500">didn't</span> + <span className="text-purple-600">原形動詞</span></p>
-            <p className="text-green-600 flex items-center gap-3 font-bold">
-              <span className="text-2xl">✅</span> I <span className="font-black text-red-500">didn't</span> <span className="underline decoration-4 decoration-green-300 font-black italic">study</span>.
-            </p>
-            <p className="text-red-400 line-through text-sm italic flex items-center gap-2">
-              <span className="text-lg">❌</span> I didn't studied.
-            </p>
+          <div className="bg-white p-5 rounded-2xl text-lg space-y-4 font-mono shadow-inner border-2 border-green-100 flex-1 relative overflow-hidden">
+            <p className="font-black text-center border-b-2 border-green-50 pb-3 text-green-500 text-xl italic">主詞 + <span className="text-red-500">didn't</span> + <span className="text-purple-600">原形</span></p>
+            
+            <div className="space-y-3">
+              <div className="bg-yellow-50 p-2 rounded-xl border border-yellow-200 text-center">
+                <p className="text-[10px] font-black text-yellow-700 leading-tight">💡 特別提醒：<span className="text-red-500">didn't</span> = <span className="text-blue-500">did not</span></p>
+              </div>
+
+              <p className="text-green-600 flex items-center gap-2 font-bold">
+                <span className="text-xl">✅</span> I <span className="font-black text-red-500">didn't</span> <span className="underline decoration-4 decoration-green-300 font-black italic">study</span>.
+              </p>
+              <p className="text-red-400 line-through text-[10px] italic flex items-center gap-1 pl-7">
+                <span className="text-sm">❌</span> I didn't studied.
+              </p>
+            </div>
           </div>
-          <img src="https://img.icons8.com/color/96/cancel.png" className="absolute -top-4 -right-4 w-12" alt="no" />
+          <img src="https://img.icons8.com/color/96/cancel.png" className="absolute -top-3 -right-3 w-10" alt="no" />
+        </div>
+
+        {/* Question Card */}
+        <div className="bg-indigo-50 p-6 rounded-[2.5rem] border-4 border-indigo-100 shadow-lg transform hover:-rotate-1 transition-transform relative flex flex-col">
+          <h4 className="text-2xl font-black text-indigo-700 mb-6 flex items-center gap-2">
+            ❓ 問句結構
+          </h4>
+          <div className="bg-white p-5 rounded-2xl text-lg space-y-4 font-mono shadow-inner border-2 border-indigo-100 flex-1">
+            <p className="font-black text-center border-b-2 border-indigo-50 pb-3 text-indigo-500 text-xl"><span className="text-orange-500">Did</span> + 主詞 + <span className="text-purple-600">原形</span>?</p>
+            <div className="space-y-2">
+              <p className="text-green-600 flex items-center gap-2 font-bold">
+                <span className="text-xl">✅</span> <span className="text-orange-500">Did</span> you <span className="underline decoration-4 decoration-green-300 font-black italic">enjoy</span>...?
+              </p>
+              <p className="text-red-400 line-through text-[10px] italic flex items-center gap-1 pl-7">
+                <span className="text-sm">❌</span> Did you enjoyed...?
+              </p>
+              <div className="bg-indigo-50 p-2 rounded-xl text-xs font-bold text-indigo-600 text-center border border-indigo-100">
+                答：Yes, I did. / No, I didn't.
+              </div>
+            </div>
+          </div>
+          <img src="https://img.icons8.com/color/96/question-mark.png" className="absolute -top-3 -right-3 w-10" alt="question" />
         </div>
       </div>
 
       <div className="flex justify-center pt-6">
         <button onClick={onNext} className="px-14 py-6 bg-purple-500 hover:bg-purple-600 text-white text-3xl font-black rounded-full shadow-[0_8px_0_0_#581c87] active:shadow-none active:translate-y-2 transition-all flex items-center gap-4">
-          <span>學拼寫魔法！</span>
-          <img src="https://img.icons8.com/color/96/pencil.png" className="w-10 h-10" alt="pencil" />
+          <span>看胖虎日記練習！</span>
+          <img src="https://img.icons8.com/color/96/bear.png" className="w-12 h-12" alt="gian bear" />
         </button>
       </div>
     </div>

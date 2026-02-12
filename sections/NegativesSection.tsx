@@ -41,7 +41,6 @@ const NegativesSection: React.FC<{ onNext: () => void }> = ({ onNext }) => {
           </div>
         </div>
         
-        {/* Background Decor */}
         <img src="https://img.icons8.com/color/512/dog.png" className="absolute -bottom-10 -right-10 w-56 opacity-10 rotate-12 group-hover:rotate-0 transition-all pointer-events-none" alt="" />
       </div>
 
@@ -64,8 +63,8 @@ const NegativesSection: React.FC<{ onNext: () => void }> = ({ onNext }) => {
 
       <div className="flex justify-center mt-10">
         <button onClick={onNext} className="px-16 py-7 bg-orange-400 hover:bg-orange-500 text-white text-3xl font-black rounded-full shadow-[0_8px_0_0_#c2410c] active:shadow-none active:translate-y-2 transition-all flex items-center gap-6 group">
-          <img src="https://img.icons8.com/color/96/star.png" className="w-12 h-12 group-hover:rotate-90 transition-transform" alt="star" />
-          <span>最後挑戰：問答大考驗！</span>
+          <img src="https://img.icons8.com/color/96/question-mark.png" className="w-12 h-12 group-hover:rotate-12 transition-transform" alt="qa" />
+          <span>前往問答大考驗！</span>
         </button>
       </div>
     </div>
