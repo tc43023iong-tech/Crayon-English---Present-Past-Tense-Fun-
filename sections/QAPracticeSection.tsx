@@ -60,9 +60,9 @@ const QAPracticeSection: React.FC<{ onNext: () => void }> = ({ onNext }) => {
       </div>
 
       <div className="flex justify-center pt-4">
-        <button onClick={onNext} className="px-16 py-7 bg-blue-500 hover:bg-blue-600 text-white text-3xl font-black rounded-full shadow-[0_8px_0_0_#0369a1] active:shadow-none active:translate-y-2 transition-all animate-bounce flex items-center gap-4">
-          <span>獲得結業大獎！</span>
-          <img src="https://img.icons8.com/color/96/trophy.png" className="w-12 h-12" alt="trophy" />
+        <button onClick={onNext} className="px-16 py-7 bg-blue-500 hover:bg-blue-600 text-white text-3xl font-black rounded-full shadow-[0_8px_0_0_#0369a1] active:shadow-none active:translate-y-2 transition-all flex items-center gap-4">
+          <span>進入重點複習！</span>
+          <img src="https://img.icons8.com/color/96/books.png" className="w-12 h-12" alt="books" />
         </button>
       </div>
     </div>

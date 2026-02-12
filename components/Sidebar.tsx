@@ -18,6 +18,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentStep, onNavigate }) => {
     { id: LessonStep.PRACTICE_SO, label: '🎯 所以呢?', icon: '🏹' },
     { id: LessonStep.PRACTICE_NEGATIVES, label: '❌ 胖虎日記', icon: '🚫' },
     { id: LessonStep.PRACTICE_QA, label: '❓ 問答高手', icon: '💡' },
+    { id: LessonStep.REVIEW_PATTERNS, label: '📚 重點句型', icon: '💎' },
     { id: LessonStep.SUMMARY, label: '🏆 畢業典禮', icon: '🏅' },
   ];
 
@@ -25,7 +26,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentStep, onNavigate }) => {
     <aside className="w-full md:w-72 bg-sky-50 border-b md:border-r-4 border-dashed border-sky-200 p-6 z-20">
       <div className="mb-8 text-center">
         <h1 className="text-3xl font-bold text-sky-600 mb-2">時態冒險島</h1>
-        <p className="text-sm text-sky-400 italic">Doraemon English Fun</p>
+        <p className="text-sm text-sky-400 italic">Animal English Fun</p>
       </div>
       <nav className="space-y-2">
         {steps.map((step) => (

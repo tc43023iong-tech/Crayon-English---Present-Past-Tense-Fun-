@@ -11,6 +11,7 @@ import GirlsTalkSection from './sections/GirlsTalkSection';
 import SoPracticeSection from './sections/SoPracticeSection';
 import NegativesSection from './sections/NegativesSection';
 import QAPracticeSection from './sections/QAPracticeSection';
+import ReviewSection from './sections/ReviewSection';
 import SummarySection from './sections/SummarySection';
 
 const App: React.FC = () => {
@@ -35,7 +36,9 @@ const App: React.FC = () => {
       case LessonStep.PRACTICE_NEGATIVES:
         return <NegativesSection onNext={() => setCurrentStep(LessonStep.PRACTICE_QA)} />;
       case LessonStep.PRACTICE_QA:
-        return <QAPracticeSection onNext={() => setCurrentStep(LessonStep.SUMMARY)} />;
+        return <QAPracticeSection onNext={() => setCurrentStep(LessonStep.REVIEW_PATTERNS)} />;
+      case LessonStep.REVIEW_PATTERNS:
+        return <ReviewSection onNext={() => setCurrentStep(LessonStep.SUMMARY)} />;
       case LessonStep.SUMMARY:
         return <SummarySection onRestart={() => setCurrentStep(LessonStep.INTRO)} />;
       default:
@@ -59,9 +62,9 @@ const App: React.FC = () => {
       <Sidebar currentStep={currentStep} onNavigate={setCurrentStep} />
       
       <main className="flex-1 overflow-y-auto p-4 md:p-10 relative z-10">
-        <div className="max-w-4xl mx-auto bg-white/80 backdrop-blur-sm rounded-[3rem] p-6 md:p-10 shadow-2xl border-8 border-dashed border-sky-100 relative">
-          <img src="https://img.icons8.com/color/96/crayon.png" className="absolute -top-6 -left-6 w-16" alt="crayon" />
-          <img src="https://img.icons8.com/color/96/pencil.png" className="absolute -bottom-6 -right-6 w-16" alt="pencil" />
+        <div className="max-w-6xl mx-auto bg-white/80 backdrop-blur-sm rounded-[3rem] p-6 md:p-10 shadow-2xl border-8 border-dashed border-sky-100 relative">
+          {/* Bottom Right Decoration - Keeping the working pencil icon */}
+          <img src="https://img.icons8.com/color/96/pencil.png" className="absolute -bottom-6 -right-6 w-16 z-20 drop-shadow-md" alt="pencil" />
           
           {renderSection()}
         </div>
